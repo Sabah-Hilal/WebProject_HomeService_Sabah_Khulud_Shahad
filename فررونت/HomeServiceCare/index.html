@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-service-care</title>
+    <link rel="icon" href="./assets/logo.png">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <!-- ******  start navbar ******* -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fs-5 fixed-top w-100 shadow">
+        <div class="container pt-0">
+            <a class="navbar-brand w-25 " href="#"><img src="./assets/logo.png" alt="" style="max-width: 100px;"></a>
+            <button class="navbar-toggler fs-6" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " aria-current="page" onclick="gotoHome()" href="#">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link " onclick="gotoHome()" href="#services">Services</a>
+                    </li>
+                    <li id="tech-profile" class="nav-item mx-2 d-none pointer">
+                        <a class="nav-link " onclick="gotoTechnicianProfile()">My reservations</a>
+                    </li>
+                    <li id="user-profile" class="position-relative mb-0 pointer d-none"><a onclick="gotoCar()" class="nav-link mx-2"><i
+                                class="fa-solid fa-cart-shopping"></i>
+                            <!-- <span id="mark" class="badge text-bg-primary px-2 py-1 d-none">4</span></a> -->
+                    </li>
+                </ul>
+                <ul class="  mb-2 mb-lg-0  list-unstyled d-flex ">
+                    <li class="nav-item mx-2 opacity-0">
+                        <a class="nav-link " href="#"><i class=" fab fa-facebook text-primary"></i></a>
+                    </li>
+                    <li class="nav-item mx-2 opacity-0">
+                        <a class="nav-link" href="#"><i class=" fab fa-whatsapp text-primary"></i></a>
+                    </li>
+                    <li class="nav-item mx-2 opacity-0">
+                        <a class="nav-link" href="#"><i class=" fab fa-instagram insta text-primary"></i></a>
+                    </li>
+
+                    <li  id="nav-login" class="nav-item mx-2">
+                        <a class="nav-link" href="#"><button onclick="gotoLogin()"
+                                class="btn btn-outline-dark py-0 pb-1">login</button></a>
+                    </li>
+                    <li id="nav-logout" class="nav-item mx-2 d-none">
+                        <a class="nav-link " href="#"><button onclick="logoutfun()"
+                                class="btn btn-outline-dark py-0 pb-1">logout</button></a>
+                    </li>
+                    <li id="nav-register" class="nav-item">
+                        <a  class="nav-link" href="#"><button onclick="gotoRegister()"
+                                class="btn btn-outline-dark py-0 pb-1">register</button></i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ******* end navbar ****** -->
+
+    <div id="home-page">
+        <!--******** start home section ******** -->
+
+    <section id="home" class="my-5 py-5 ">
+        <div class="container py-5 ">
+            <div class="row justify-content-between pt-lg-5">
+                <div class="col-md-6 d-flex flex-column justify-content-center">
+                    <h2 class="">Reliable Home Maintenance Services You Can Trust</h2>
+                    <p class="mb-5">"Plumbing, Carpentry, Electrical Work, and More – Done Right the First Time."</p>
+                    <p class="mb-5 fw-semibold">Looking for skilled professionals to handle your home repairs? We
+                        provide expert plumbing,
+                        carpentry, electrical, and renovation services with efficiency, reliability, and top-quality
+                        results – all to give you peace of mind.</p>
+                    <div class="mb-5">
+                        <button href="#services" class="btn btn-primary">Request a Service</button>
+                       
+                    </div>
+                </div>
+                <div class="col-md-5 overflow-hidden">
+                    <div>
+                        <img class="w-100"
+                            src="./assets/png-clipart-handyman-plumbing-home-repair-graphics-home-contractor-logo-payment (1).png"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ********* end home *********** -->
+
+    <!-- ********* services section *********** -->
+    <section id="services" class="py-5 bg-light min-vh-100">
+        <div class="container pt-5">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row g-3" id="categories">
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- ********* start car ********** -->
+
+    <section id="mycar" class="car-section d-none min-vh-100 pt-5 position-relative">
+            <div class="container py-5">
+                <h1 class="text-center my-5">Checkout</h1>
+                <div class="row">
+                  <!-- العناصر التي تم اختيارها -->
+                  <div class="col-md-8">
+                    <div id="selectedItems" class="list-group"></div>
+                  </div>
+                  <!-- الملخص -->
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Summary</h5>
+                        <p class="card-text">Total Price: <span id="totalPrice" class="fw-bold">0</span> SAR</p>
+                        <button class="btn btn-primary w-100" id="confirm-booking">Confirm Booking</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <section class=" py-5 min-vh-100">
+                <div class="container mt-5">
+                    <h3 class="py-4 text-center">Previous Reservations</h3>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>technician Name</th>
+                          <th>technician Phone</th>
+                          <th>Date</th>
+                          <th>Start Time</th>
+                          <th>End Time</th>
+                          <th>Status</th>
+                          <th>Price</th>
+                        </tr>
+                      </thead>
+                      <tbody id="reservationTable">
+                        <!-- سيتم عرض البيانات هنا -->
+                      </tbody>
+                    </table>
+                    <div id="noDataMessage" class="d-none text-center">
+                        <h3>No reservations available</h3>
+                    </div>
+                    
+                  </div>
+            
+             </section>
+            
+
+    </section>
+
+   
+
+
+    <!-- ******** end car *********** -->
+
+
+    <!-- *********************************** rating ******************************** -->
+
+    <div class="container mt-5 d-none min-vh-100 py-5" id="ratingSection">
+        <h3 class="text-center pt-5">Rate the Technician</h3>
+        <p class="text-center">Select from 1 to 5 stars</p>
+        <div class="text-center">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary" id="submitRating" disabled>Submit Rating</button>
+        </div>
+    </div>
+    
+
+    <!-- *************** category details ************** -->
+<section id="category-details" class="py-5 min-vh-100 d-none">
+
+</section>
+
+    <!-- *************** SubCategory details ************** -->
+    <section id="SubCategory-details" class="py-5 min-vh-100 d-none">
+
+    </section>
+    
+<!-- ***************************** technician avilably date for appointments ****************************** -->
+
+<section id="technician" class="py-5 min-vh-100 d-none">
+    <div class="container mt-5">
+        <!-- Technician Details Section -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Technician Details</h2>
+            <p><strong>Name:</strong> <span id="technician-name" class="text-primary h5"></span></p>
+            <p><strong>Phone Number:</strong> <span id="technician-phone"  class="text-primary h5"></span></p>
+          </div>
+        </div>
+    
+        <!-- Visits Table Section -->
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Available Visits</h3>
+            <table class="table table-bordered table-striped" id="visits-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Price</th>
+                  <th>Availability</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data will be added here dynamically using JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <!-- ****** start login *********-->
+
+    <section id="login" class=" d-none">
+
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="row w-100  justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Login</h5>
+
+                            <!-- Login Form -->
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="loginPhone" class="form-label">Phone number</label>
+                                    <input type="text" class="form-control" id="loginPhone" placeholder="Enter your phone number" required>
+                                    <div class="invalid-feedback">Please enter a valid Saudi phone number (e.g., +966XXXXXXXXX or 05XXXXXXXXX).</div>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                                    <div class="invalid-feedback">Please enter your password.</div>
+                                </div>
+                            
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary" id="loginSubmitButton" disabled>Login</button>
+                                </div>
+                            
+                                <div id="loginSuccess" class="d-none text-success">Login successful!</div>
+                                <div id="loginError" class="d-none text-danger">Login failed. Please try again.</div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    <p>Don't have an account?  <span class="text-primary pointer" onclick="gotoRegister()">Register now <i class=" fas fa-arrow-right"></i></span></p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container">
+            <h3>Login :</h3>
+            <div class="login">
+                <p id="errorAcc" class="error haid">you dont have an account please go to Register</p>
+                <p id="errorData" class="error haid">your email or password is not valid</p>
+                <div>
+                    <label for="logemail">Email :</label>
+                    <input id="logemail" type="text" placeholder="Enter your email...">
+                </div>
+                <div>
+                    <label for="logpass">Password :</label>
+                    <input id="logpass" type="password" placeholder="Enter your password...">
+                </div>
+                <div class="login-butt">
+                    <button onclick="loginDone()">login</button>
+                </div>
+                <p>you dont have an account ? go to <a onclick="gotoRegister()">Register</a></p>
+            </div>
+        </div> -->
+    </section>
+    <!-- ******* end login ******* -->
+
+    <!-- ******* start register ******** -->
+   
+    <section id="register" class="haid d-none">
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="row w-100 justify-content-center align-items-center pt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Register</h5>
+    
+                            <!-- Register Form -->
+                            <form id="registerForm" novalidate>
+                                <div class="form-group mb-2">
+                                    <label for="registerName">Name</label>
+                                    <input type="text" id="registerName" class="form-control" placeholder="Enter name">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="registerPhone">Phone</label>
+                                    <input type="text" id="registerPhone" class="form-control" placeholder="Enter phone number">
+                                    <div class="invalid-feedback">Please enter a valid Saudi phone number (e.g., +966XXXXXXXXX or 05XXXXXXXXX).</div>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="password" id="registerPassword" class="form-control" placeholder="Enter password">
+                                    <div class="invalid-feedback">
+                                        Password must:
+                                        <ul>
+                                            <li>Be at least 6 characters long.</li>
+                                            <li>Contain at least one uppercase letter.</li>
+                                            <li>Contain at least one number.</li>
+                                            <li>Contain at least one special character (!@#$%^&*(),.?":{}|<>).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="registerUserType">User Type</label>
+                                    <select id="registerUserType" class="form-control">
+                                        <option value="">Choose...</option>
+                                        <option value="0">User</option>
+                                        <option value="1">Technician</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-2 d-none" id="categoryGroup">
+                                    <label for="registerCategory">Category</label>
+                                    <select id="registerCategory" class="form-control">
+                                        <option value="">Choose...</option>
+                                        <!-- Dynamically populated via JS -->
+                                    </select>
+                                </div>
+                                <button type="submit" id="registerSubmitButton" class="btn btn-primary mt-3 w-100" disabled>Register</button>
+                                <div id="registerSuccess" class="alert alert-success mt-3 d-none">Registration successful!</div>
+                                <div id="registerError" class="alert alert-danger mt-3 d-none">Registration failed!</div>
+                            </form>
+                        </div>
+                    </div>
+                    <p>Do you already have an account? <span class="text-primary pointer" onclick="gotoLogin()">login <i class="fas fa-arrow-right"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ************************************* technician profile ************************************ -->
+
+ <section id="technician-profile" class="d-none py-5 min-vh-100">
+    <div class="container mt-5">
+        <h2 class="py-4">Reservations</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Client Name</th>
+              <th>Client Phone</th>
+              <th>Date</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Status</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="reservationTable1">
+            <!-- سيتم عرض البيانات هنا -->
+          </tbody>
+        </table>
+        <div id="noDataMessage" class="d-none text-center">
+            <h3>No reservations available</h3>
+        </div>
+        
+      </div>
+
+ </section>
+
+
+    <!-- ************************************* payment ************************************** -->
+
+    <div class="container min-vh-100 mt-5 py-5 d-none" id="payment">
+        <h2 class="text-center mb-4">Payment Form</h2>
+        <div class="row d-flex justify-content-center">
+            <form id="paymentForm" class="p-4 border rounded shadow col-md-6">
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+    
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+    
+                <!-- Card Number -->
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" required>
+                    <div class="invalid-feedback">Please enter a valid card number (16 digits).</div>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+    
+                <!-- Expiry Date and CVV -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="expiryDate" class="form-label">Expiry Date</label>
+                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                        <div class="invalid-feedback">Please enter a valid expiry date (MM/YY).</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="password" class="form-control" id="cvv" placeholder="CVV" maxlength="3" required>
+                        <div class="invalid-feedback">Please enter a valid CVV (3 digits).</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+    
+                <!-- Amount -->
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Amount (SAR)</label>
+                    <input type="number" class="form-control" disabled id="amount" placeholder="Enter amount" min="1" required>
+                    <div class="invalid-feedback">Please enter a valid amount in SAR.</div>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+    
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary w-100" disabled id="submit">Pay Now</button>
+            </form>
+        </div>
+    </div>
+    
+      
+
+
+
+      <section id="footer" class="bottom-0">
+        <!-- Footer Section -->
+        <footer class="bg-dark text-white pt-5 pb-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Logo Section -->
+                    <div class="col-md-6">
+                        <img src="./assets/home-services-logo-house-maintenance-and-paint-service-logo-design-house-repair-and-maintenance-log-with-repairing-and-paint-tools-2T13NM2.jpg"
+                            alt="Company Logo" class="img-fluid mb-3 rounded-3 shadow" style="max-width: 150px;">
+                        <p>We provide top-notch home services including plumbing, carpentry, electrical work, and more.
+                            Our team is dedicated to offering professional services with a focus on quality and customer
+                            satisfaction.</p>
+                    </div>
+
+                    <!-- Quick Links Section -->
+                    <div class="col-md-3">
+                        <h5 class="fw-bold">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-white">Services</a></li>
+                            <li><a href="#" class="text-white">About</a></li>
+                            <li><a href="#" class="text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Media Section -->
+                    <div class="col-md-3">
+                        <h5 class="fw-bold">Follow Us</h5>
+                        <ul class="list-unstyled d-flex">
+                            <li><a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer Bottom -->
+                <div class="text-center mt-4">
+                    <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Add FontAwesome for social icons -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+        <!-- Add FontAwesome for social icons -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
